@@ -1,6 +1,9 @@
 <% title "of the publication #{@publication.title}" %>
 
-<div>Title: <%= @publication.title %></div>
-<div>URL: <%= @publication.url %></div>
-<div>Journal: <%= @publication.journal %></div>
-<div>Number of Annotations: <%= @publication.annotations.size %></div>
+<div class="display rounded">
+  <div>Title: <%= @publication.title %></div>
+  <div>PubMed: <%= pubmed_link(@publication.pmid) %></div>
+  <div>Journal: <%= link_to(@publication.journal.title, journal_url(@publication.journal)) %></div>
+  <div>Number of Annotations: <%= @publication.annotations.size %></div>
+</div>
+

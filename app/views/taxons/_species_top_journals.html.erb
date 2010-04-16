@@ -6,7 +6,7 @@
 			<td><% if j[0].open_access != "no" && j[0].open_access != "0" %>
 					<%= image_tag("OA-icon.gif", :alt => "OA", :title => "Open Access: #{j[0].open_access}") %>
 				<% end %></td>
-			<td><%= link_to j[0].abbrev_title, :controller => "journals", :action => "show", :id => j[0].id %></td>
+			<td><%= link_to(j[0].abbrev_title, journal_url(j[0])) %></td>
 			<td><%= j[1] %></td>
 		<% else %>
 			<td colspan="2">nil </td>

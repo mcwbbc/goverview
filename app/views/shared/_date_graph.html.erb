@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	var chart_<%= chart_id %> = new Highcharts.Chart({
 	   chart: {
-	      renderTo: 'container',
+	      renderTo: "container-<%= chart_id %>",
 	      defaultSeriesType: 'area'
 	   },
 		title: {
@@ -57,11 +57,7 @@ $(document).ready(function() {
 
 	   }]
 	});
+});
+</script>
 
-
-			
-			
-		});
-		</script>
-
-<div id="container" style="width: 450; height: 300px; margin: 0 auto"></div>
+<div id="container-<%= chart_id %>" style="width: 450; height: 300px; margin: 0 auto"></div>
