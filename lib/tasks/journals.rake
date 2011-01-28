@@ -3,10 +3,10 @@ require 'bio'
 
 namespace :journals do
 
-  desc "Updates the Journals table using the PMC open access csv file"
+  desc "Updates the Journals table using the PMC open access csv file: http://www.ncbi.nlm.nih.gov/pmc/journals/#csvfile"
   task :update_from_jlist, :file, :needs => :environment do |t,args|
     puts "Importing jlist file"
-    args.with_defaults(:file => 'gene_association.rgd')
+    args.with_defaults(:file => 'jlist.csv')
     
     the_file = args[:file]
     File.open(the_file,"r") do |file|
@@ -18,6 +18,6 @@ namespace :journals do
       end
     end
     
-    puts "Loaded GAF data from #{the_file}, #{Annotation.count(:all)} annotations after loading"
+    puts "Loaded jLIst data from #{the_file}, #{Journals.count(:all)} journals after loading"
   end
 end
